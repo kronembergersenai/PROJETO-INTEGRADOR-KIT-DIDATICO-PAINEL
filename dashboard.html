@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>KIT DIDÁTICO — Painel de Comando com Comunicação Sem Fio</title>
+<style>
+  :root{
+    --bg:#0f1724;
+    --card:#0b1220;
+    --accent:#06b6d4;
+    --muted:#9aa6b2;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  body{margin:0;background:linear-gradient(180deg,#061025 0%, #08162a 100%);color:#e6eef6}
+  header{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:12px 20px;background:rgba(0,0,0,0.3);border-bottom:1px solid rgba(255,255,255,0.05);
+    position:sticky;top:0;z-index:10;
+  }
+  .brand{display:flex;align-items:center;gap:10px}
+  .logo{width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;color:#041022}
+  nav ul{display:flex;gap:12px;list-style:none;margin:0;padding:0}
+  nav button{
+    background:none;border:none;color:#fff;font-weight:600;cursor:pointer;padding:8px 14px;border-radius:6px
+  }
+  nav button.active,nav button:hover{background:rgba(255,255,255,0.1)}
+  main{padding:20px;max-width:1200px;margin:auto}
+  section{display:none}
+  section.active{display:block}
+  h2{margin-top:0;color:#fff}
+  p,li{color:var(--muted);line-height:1.6}
+  .card{
+    background:var(--card);padding:20px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.4);margin-bottom:20px
+  }
+  footer{text-align:center;color:var(--muted);padding:20px 0;border-top:1px solid rgba(255,255,255,0.05);margin-top:20px}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="logo">KD</div>
+    <h1>KIT DIDÁTICO</h1>
+  </div>
+  <nav>
+    <ul>
+      <li><button class="active" onclick="show('overview')">Visão Geral</button></li>
+      <li><button onclick="show('objetivos')">Objetivos</button></li>
+      <li><button onclick="show('tecnico')">Resumo Técnico</button></li>
+      <li><button onclick="show('docs')">Documentação</button></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <!-- Visão Geral -->
+  <section id="overview" class="active">
+    <div class="card">
+      <h2>Visão Geral</h2>
+      <p>Este projeto propõe o desenvolvimento de um <strong>Painel Didático de Comando com Comunicação Sem Fio</strong>. 
+      Ele foi idealizado para atender turmas com muitos alunos, onde a quantidade de máquinas físicas seria insuficiente ou cara. 
+      A solução integra <strong>CLPs, inversores de frequência, botoeiras, sinaleiras e um roteador</strong> para gerenciar conexões de diversos computadores em um único conjunto de hardware.</p>
+    </div>
+  </section>
+
+  <!-- Objetivos -->
+  <section id="objetivos">
+    <div class="card">
+      <h2>Objetivos do Projeto</h2>
+      <ul>
+        <li>Montar um painel elétrico com CLP Siemens S7-1200, botoeiras, sinaleiras e contatora.</li>
+        <li>Permitir controle do inversor Altivar por entradas digitais.</li>
+        <li>Controlar o inversor pela saída analógica de 4–20 mA do CLP.</li>
+        <li>Integrar um roteador para permitir que vários computadores acessem o painel (um por vez).</li>
+        <li>Fornecer um recurso didático para aulas práticas, sem necessidade de múltiplos kits por aluno.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Resumo Técnico -->
+  <section id="tecnico">
+    <div class="card">
+      <h2>Resumo Técnico</h2>
+      <p>O painel didático terá:</p>
+      <ul>
+        <li><strong>CLP Siemens S7-1200</strong> com módulos digitais e analógicos.</li>
+        <li><strong>Inversor Altivar</strong> controlado via sinal analógico 4–20 mA e entradas digitais.</li>
+        <li><strong>Roteador</strong> para criar uma rede interna que permita a conexão controlada de vários PCs.</li>
+        <li><strong>Botoeiras e sinaleiras</strong> para simulação prática de comandos e sinalização.</li>
+        <li><strong>Contatora</strong> para acionamento de cargas.</li>
+      </ul>
+      <p>O objetivo técnico é construir uma infraestrutura modular, escalável e fácil de usar em aulas, facilitando a integração de conceitos de automação industrial.</p>
+    </div>
+  </section>
+
+  <!-- Documentação -->
+  <section id="docs">
+    <div class="card">
+      <h2>Documentação e Guia</h2>
+      <p>Este projeto está alinhado ao <strong>Guia Prático de Projetos Integradores (SENAI)</strong>, que apresenta a metodologia, etapas e critérios para avaliação de projetos técnicos.</p>
+      <p>O dashboard serve como material de apoio ao instrutor, permitindo apresentar de forma visual e clara os objetivos, componentes e arquitetura do painel didático.</p>
+      <p><em>Referência:</em> Guia Prático Projetos Integradores — Escola.:contentReference[oaicite:0]{index=0}</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © 2025 KIT Didático — Painel de Comando com Comunicação Sem Fio
+</footer>
+
+<script>
+function show(id){
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+  document.querySelector(`nav button[onclick="show('${id}')"]`).classList.add('active');
+}
+</script>
+</body>
+</html>
