@@ -1,64 +1,47 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Painel Didático</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Painel de Comando Wireless</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav>
-    <h1>Painel Didático</h1>
-    <ul>
-      <li><a href="#contexto">Contexto</a></li>
-      <li><a href="#objetivo">Objetivo</a></li>
-      <li><a href="#componentes">Componentes</a></li>
-      <li><a href="#fluxo">Fluxo de Execução</a></li>
-      <li><a href="#beneficios">Benefícios</a></li>
-    </ul>
-  </nav>
-
-  <section id="contexto">
-    <h2>🔴 Contexto</h2>
-    <p>Turmas grandes demandam muitas máquinas. Isso gera alto custo e pouco tempo de prática por aluno. A proposta é criar um único painel didático com comunicação sem fio, acessado sequencialmente por vários alunos.</p>
-  </section>
-
-  <section id="objetivo">
-    <h2>🟠 Objetivo</h2>
-    <ul>
-      <li>Montar painel com CLP S7‑1215, botoeiras, sinaleiras e contatora</li>
-      <li>Controlar inversor Altivar via entradas digitais</li>
-      <li>Controlar inversor via saída analógica 4–20 mA do CLP</li>
-      <li>Integrar roteador para rede sequencial</li>
-    </ul>
-  </section>
-
-  <section id="componentes">
-    <h2>🔵 Componentes do Kit</h2>
-    <div class="grid">
-      <div>CLP Siemens S7‑1215</div>
-      <div>Botoeiras</div>
-      <div>Sinaleiras</div>
-      <div>Contatora</div>
-      <div>Inversor Altivar</div>
-      <div>Roteador Wi-Fi</div>
-    </div>
-  </section>
-
-  <section id="fluxo">
-    <h2>🟣 Fluxo de Execução</h2>
-    <ol>
-      <li>Montagem física do painel</li>
-      <li>Configuração do CLP e inversor</li>
-      <li>Integração do roteador</li>
-      <li>Testes de comunicação</li>
-      <li>Treinamento dos alunos</li>
-    </ol>
-  </section>
-
-  <section id="beneficios">
-    <h2>🟪 Benefícios</h2>
-    <p>O projeto reduz custos, organiza o uso dos recursos, aumenta o tempo de prática por aluno e permite que todos tenham acesso ao painel sem conflito.</p>
-  </section>
+<header>
+<nav class="navbar">
+<ul class="nav-menu">
+<li><a href="#problema">Problema</a></li>
+<li><a href="#objetivo">Objetivo</a></li>
+<li><a href="#resumo-tecnico">Resumo Técnico</a></li>
+<li><a href="#dashboard">Dashboard</a></li>
+</ul>
+</nav>
+</header>
+<main>
+<section id="problema">
+<h2>Problema a ser resolvido</h2>
+<p>Turmas com muitos alunos demandam muitas máquinas, o que dificulta o atendimento individual e gera a necessidade de múltiplos equipamentos para controle de processos, como CLPs e inversores.</p>
+</section>
+<section id="objetivo">
+<h2>Objetivo do projeto</h2>
+<ul>
+<li>Desenvolver um painel elétrico com CLP S7-1215 DCDC, botoeiras, sinaleiras e contatora.</li>
+<li>Controlar um inversor Altivar utilizando suas entradas digitais.</li>
+<li>Controle do inversor via saída analógica 4-20mA do CLP.</li>
+<li>Implementar um roteador para formar uma rede que permita comunicação sequencial de vários computadores com o conjunto.</li>
+</ul>
+</section>
+<section id="resumo-tecnico">
+<h2>Resumo Técnico</h2>
+<p>Turmas grandes necessitam estruturar várias máquinas com CLPs e inversores, integrando-as para facilitar o controle e o ensino prático.</p>
+</section>
+<section id="dashboard">
+<h2>Dashboard Interativo</h2>
+<div id="info">
+<p>Este dashboard exemplifica a integração e controle das máquinas via sistema wireless com CLP e inversores.</p>
+</div>
+</section>
+</main>
+<script src="app.js"></script>
 </body>
 </html>
